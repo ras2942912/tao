@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>施工損害鄰房 Q&A 系統</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 20px;
+      background-color: #f9f9f9;
+    }
+    h1 {
+      color: #333;
+    }
+    .question-button {
+      display: block;
+      margin: 10px 0;
+      padding: 10px 15px;
+      font-size: 16px;
+      color: #fff;
+      background-color: #007bff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-align: left;
+      width: 100%;
+      max-width: 500px;
+    }
+    .question-button:hover {
+      background-color: #0056b3;
+    }
+    #answerBox {
+      margin-top: 20px;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+      max-width: 500px;
+    }
+  </style>
+  <script>
+    function showAnswer(question) {
+      const answers = {
+        "遇到施工損害，我該怎麼辦？": `
+          1. 立即通知施工單位，將損害情況告知並要求現場檢查。<br>
+          2. 保存證據，如拍攝照片、記錄損害細節。<br>
+          3. 若施工方未處理，可向桃園市建築管理單位提出申訴。
+        `,
+        "施工損害賠償的處理流程是什麼？": `
+          1. 提出申請：向主管機關提交損害賠償申請。<br>
+          2. 協助調解：主管機關協助雙方協商解決。<br>
+          3. 專業鑑定：必要時委託第三方進行損害評估。<br>
+          4. 法律行動：若協商失敗，可透過法院提起訴訟。
+        `,
+        "哪些損害可以提出賠償？": `
+          - 結構性損害：如牆壁裂縫、地基沉陷等。<br>
+          - 功能性損害：如停水、停電等問題。<br>
+          - 財物損害：如家具或電器損壞。
+        `,
+        "如果雙方無法達成共識，應該怎麼辦？": `
+          1. 向主管機關申請調解，讓第三方協助處理。<br>
+          2. 委託第三方鑑定機構進行損害範圍與責任評估。<br>
+          3. 透過法院提起民事訴訟，依《民法》請求賠償。
+        `,
+        "如何申請調解？": `
+          1. 備妥資料：準備損害照片、鑑定報告及相關證據。<br>
+          2. 提交申請：填寫申請表，並提交至桃園市建築管理單位。<br>
+          3. 等待通知：主管機關將通知雙方參加調解會議。
+        `
+      };
+      document.getElementById("answerBox").innerHTML = answers[question] || "抱歉，無法回答此問題。";
+    }
+  </script>
+</head>
+<body>
+  <h1>施工損害鄰房 Q&A 系統</h1>
+  <p>請選擇您的問題：</p>
+  <button class="question-button" onclick="showAnswer('遇到施工損害，我該怎麼辦？')">遇到施工損害，我該怎麼辦？</button>
+  <button class="question-button" onclick="showAnswer('施工損害賠償的處理流程是什麼？')">施工損害賠償的處理流程是什麼？</button>
+  <button class="question-button" onclick="showAnswer('哪些損害可以提出賠償？')">哪些損害可以提出賠償？</button>
+  <button class="question-button" onclick="showAnswer('如果雙方無法達成共識，應該怎麼辦？')">如果雙方無法達成共識，應該怎麼辦？</button>
+  <button class="question-button" onclick="showAnswer('如何申請調解？')">如何申請調解？</button>
+  <div id="answerBox">請選擇問題以查看答案。</div>
+</body>
+</html>
